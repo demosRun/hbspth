@@ -1,0 +1,62 @@
+<template lang="pug">
+.video-player
+  video(id="videoPlay" src="" x5-playsinline="true" x5-video-player-fullscreen="true" preload="auto" x5-video-orientation="portraint" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" x5-video-player-type="h5")
+  img.close-button(src="@|29.png|" o-tap="close")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      this.query('#videoPlay').addEventListener('ended', () => {
+        setTimeout(() => {
+          this.close()
+        }, 800);
+      }, false);
+    },
+    playUrl: function (url) {
+      this.query('#videoPlay').src = url
+      this.play()
+    },
+    play: function () {
+      const videoPlayer = this.query('#videoPlay')
+      this.$el.style.display = 'block'
+      setTimeout(() => {
+        this.$el.style.opacity = '1'
+      }, 100);
+      
+      videoPlayer.play()
+    },
+    close: function () {
+      this.query('#videoPlay').pause();
+      this.$el.style.opacity = '0'
+      setTimeout(() => {
+        this.$el.style.display = 'none'
+      }, 800);
+    }
+  }
+</script>
+
+
+<style lang="less">
+.video-player {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.8s;
+  video {
+    width: 100%;
+  }
+}
+.close-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 6%;
+  width: 17%;
+}
+</style>

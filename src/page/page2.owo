@@ -1,0 +1,80 @@
+<template lang="pug">
+.page-2
+  .so.so-0
+    img.so.so-1(src="@|29.png|" go="page1//scaleCenter/scaleUpDownCenter&&delay400/true")
+    img.so.so-2(src="@|27.png|")
+    img.so.so-3(src="@|25.png|" o-tap="owo.script.videoPlay.playUrl('@|7.mp4|')")
+    img.so.so-4(src="@|23.png|" o-tap="owo.script.videoPlay.playUrl('@|6.mp4|')")
+    img.so.so-5(src="@|21.png|" o-tap="owo.script.videoPlay.playUrl('@|5.mp4|')")
+    img.so.so-6(src="@|19.png|" o-tap="owo.script.videoPlay.playUrl('@|4.mp4|')")
+    img.so.so-7(src="@|17.png|" o-tap="owo.script.videoPlay.playUrl('@|3.mp4|')")
+    img.so.so-8(src="@|15.png|" o-tap="owo.script.videoPlay.playUrl('@|2.mp4|')")
+    img.so.so-9(src="@|13.png|" o-tap="owo.script.videoPlay.playUrl('@|1.mp4|')")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+
+    }
+  }
+</script>
+
+
+<style lang="less">
+.so {
+  position: absolute;
+}
+.so-0 {
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 1506px;
+  z-index: 0;;
+}
+.so-1 {
+  left: 322px;
+  top: 1133px;
+  z-index: -1;
+}
+.so-2 {
+  left: 219px;
+  top: 865px;
+  z-index: -2;
+}
+.so-3 {
+  left: 265px;
+  top: 642px;
+  z-index: -3;
+}
+.so-4 {
+  left: 479px;
+  top: 426px;
+  z-index: -4;
+}
+.so-5 {
+  left: 264px;
+  top: 426px;
+  z-index: -5;
+}
+.so-6 {
+  left: 51px;
+  top: 426px;
+  z-index: -6;
+}
+.so-7 {
+  left: 479px;
+  top: 210px;
+  z-index: -7;
+}
+.so-8 {
+  left: 264px;
+  top: 210px;
+  z-index: -8;
+}
+.so-9 {
+  left: 51px;
+  top: 210px;
+  z-index: -9;
+}
+</style>

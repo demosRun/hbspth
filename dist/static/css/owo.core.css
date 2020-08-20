@@ -1,0 +1,266 @@
+body, html, .page, .page-box {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.owo-animation {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.owo-animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.owo-animation-forward {
+  z-index: 99;
+}
+
+img {
+  border: none;
+}
+
+[route-active="false"] {
+  display: none;
+}
+
+/* 清除浮动 */
+.clear:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.loading-box {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cunchu.site/ozzx/resource/lanse.jpg');
+}
+
+.loading-box .loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -16%;
+  bottom: 0;
+  margin: auto;
+}
+
+.loading-box .loading-bar {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  height: 14px;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.loading-box .num-bar {
+  background-color: #58b3dd;
+  height: 14px;
+  border-radius: 7px;
+  width: 0%;
+}
+
+.loading-box .num,
+.loading-box .text {
+  position: absolute;
+  top: 0%;
+  bottom: -8%;
+  margin: auto;
+  line-height: 50px;
+  height: 50px;
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.loading-box .text {
+  bottom: -14%;
+}
+.page-1 .so {
+  position: absolute;
+}
+
+.page-1 .so-0 {
+  left: 1px;
+  top: 1px;
+  width: 750px;
+  height: 1506px;
+  z-index: 0;
+}
+
+.page-1 .so-1 {
+  left: 511px;
+  top: 1094px;
+  z-index: -1;
+}
+
+.page-1 .so-2 {
+  left: 131px;
+  top: 1094px;
+  z-index: -2;
+}
+
+.page-1 .so-3 {
+  left: 131px;
+  top: 375px;
+  z-index: -3;
+}
+.page-2 .so {
+  position: absolute;
+}
+
+.page-2 .so-0 {
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 1506px;
+  z-index: 0;
+}
+
+.page-2 .so-1 {
+  left: 322px;
+  top: 1133px;
+  z-index: -1;
+}
+
+.page-2 .so-2 {
+  left: 219px;
+  top: 865px;
+  z-index: -2;
+}
+
+.page-2 .so-3 {
+  left: 265px;
+  top: 642px;
+  z-index: -3;
+}
+
+.page-2 .so-4 {
+  left: 479px;
+  top: 426px;
+  z-index: -4;
+}
+
+.page-2 .so-5 {
+  left: 264px;
+  top: 426px;
+  z-index: -5;
+}
+
+.page-2 .so-6 {
+  left: 51px;
+  top: 426px;
+  z-index: -6;
+}
+
+.page-2 .so-7 {
+  left: 479px;
+  top: 210px;
+  z-index: -7;
+}
+
+.page-2 .so-8 {
+  left: 264px;
+  top: 210px;
+  z-index: -8;
+}
+
+.page-2 .so-9 {
+  left: 51px;
+  top: 210px;
+  z-index: -9;
+}
+.video-player {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.8s;
+}
+
+.video-player video {
+  width: 100%;
+}
+
+.video-player .close-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 6%;
+  width: 17%;
+}
+/* 页面切换动画 */
+.o-page-scaleDownCenter {
+	-webkit-animation: scaleDownCenter .4s ease-in both;
+	-moz-animation: scaleDownCenter .4s ease-in both;
+	animation: scaleDownCenter .4s ease-in both;
+}
+
+@-webkit-keyframes scaleDownCenter {
+	to { opacity: 0; -webkit-transform: scale(.7); }
+}
+@-moz-keyframes scaleDownCenter {
+	to { opacity: 0; -moz-transform: scale(.7); }
+}
+@keyframes scaleDownCenter {
+	to { opacity: 0; transform: scale(.7); }
+}
+.o-page-scaleUpCenter {
+	-webkit-animation: scaleUpCenter .4s ease-out both;
+	-moz-animation: scaleUpCenter .4s ease-out both;
+	animation: scaleUpCenter .4s ease-out both;
+}
+@-webkit-keyframes scaleUpCenter {
+	from { opacity: 0; -webkit-transform: scale(.7); }
+}
+@-moz-keyframes scaleUpCenter {
+	from { opacity: 0; -moz-transform: scale(.7); }
+}
+@keyframes scaleUpCenter {
+	from { opacity: 0; transform: scale(.7); }
+}
+.o-page-delay400 {
+	-webkit-animation-delay: .4s !important;
+	-moz-animation-delay: .4s !important;
+	animation-delay: .4s !important;
+}
+
+
+
