@@ -1,7 +1,7 @@
 <template lang="pug">
 .page-1
   .so.so-0
-    img.so.so-1(src="@|11.png|" go="page2//scaleDownCenter/scaleUpCenter&&delay400/true")
+    img.so.so-1(src="@|11.png|" o-animation="shrink" o-tap="autoPlay")
     img.so.so-2(src="@|9.png|")
     img.so.so-3(src="@|7.png|")
 </template>
@@ -10,6 +10,20 @@
   module.exports = {
     created: function () {
 
+    },
+    autoPlay: function () {
+      const videoList = [
+        'http://demos.run/hubeiVideo/video/1.mp4',
+        'http://demos.run/hubeiVideo/video/2.mp4',
+        'http://demos.run/hubeiVideo/video/3.mp4',
+        'http://demos.run/hubeiVideo/video/4.mp4',
+        'http://demos.run/hubeiVideo/video/5.mp4',
+        'http://demos.run/hubeiVideo/video/6.mp4',
+        'http://demos.run/hubeiVideo/video/7.mp4',
+        'http://demos.run/hubeiVideo/video/8.mp4'
+      ]
+      
+      owo.script.videoPlay.playUrl(videoList[randomNum(0, 7)])
     }
   }
 </script>

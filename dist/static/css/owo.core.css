@@ -55,60 +55,19 @@ li {
   list-style: none;
 }
 
-.loading-box {
-  width: 100%;
-  height: 100%;
-  background-image: url('https://cunchu.site/ozzx/resource/lanse.jpg');
+[o-animation="shrink"] {
+  -webkit-animation: shrink 1s linear alternate infinite;
+  animation: shrink 1s linear alternate infinite;
+}
+@-webkit-keyframes shrink{
+  0%{-webkit-transform:scale(0.9);}
+  100%{-webkit-transform:scale(1);}
+}
+@keyframes shrink{
+  0%{transform:scale(0.9);}
+  100%{transform:scale(1);}
 }
 
-.loading-box .loading {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -16%;
-  bottom: 0;
-  margin: auto;
-}
-
-.loading-box .loading-bar {
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  height: 14px;
-  background-color: white;
-  width: 80%;
-  margin: auto;
-  left: 0;
-  right: 0;
-  border-radius: 15px;
-  padding: 10px;
-}
-
-.loading-box .num-bar {
-  background-color: #58b3dd;
-  height: 14px;
-  border-radius: 7px;
-  width: 0%;
-}
-
-.loading-box .num,
-.loading-box .text {
-  position: absolute;
-  top: 0%;
-  bottom: -8%;
-  margin: auto;
-  line-height: 50px;
-  height: 50px;
-  font-size: 36px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-}
-
-.loading-box .text {
-  bottom: -14%;
-}
 .page-1 .so {
   position: absolute;
 }
@@ -138,6 +97,31 @@ li {
   top: 375px;
   z-index: -3;
 }
+@-webkit-keyframes flicker {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 20%;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 20%;
+  }
+}
+
+[o-animation="flicker"] {
+  -webkit-animation: flicker 2s linear 0s infinite alternate;
+  animation: flicker 2s linear 0s infinite alternate;
+}
+
 .page-2 .so {
   position: absolute;
 }
@@ -163,7 +147,7 @@ li {
 }
 
 .page-2 .so-3 {
-  left: 265px;
+  left: 155px;
   top: 642px;
   z-index: -3;
 }
@@ -203,15 +187,17 @@ li {
   top: 210px;
   z-index: -9;
 }
+
+.page-2 .so-add {
+  left: 375px;
+  top: 642px;
+}
 .video-player {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  display: none;
-  transition: opacity 0.8s;
 }
 
 .video-player video {
@@ -223,7 +209,7 @@ li {
   left: 0;
   right: 0;
   margin: auto;
-  bottom: 6%;
+  bottom: 12%;
   width: 17%;
 }
 /* 页面切换动画 */
@@ -256,11 +242,35 @@ li {
 @keyframes scaleUpCenter {
 	from { opacity: 0; transform: scale(.7); }
 }
-.o-page-delay400 {
-	-webkit-animation-delay: .4s !important;
-	-moz-animation-delay: .4s !important;
-	animation-delay: .4s !important;
+.o-page-scaleDown {
+	-webkit-animation: scaleDown .7s ease both;
+	-moz-animation: scaleDown .7s ease both;
+	animation: scaleDown .7s ease both;
 }
 
+@-webkit-keyframes scaleDown {
+	to { opacity: 0; -webkit-transform: scale(.8); }
+}
+@-moz-keyframes scaleDown {
+	to { opacity: 0; -moz-transform: scale(.8); }
+}
+@keyframes scaleDown {
+	to { opacity: 0; transform: scale(.8); }
+}
+.o-page-scaleUpDown {
+	-webkit-animation: scaleUpDown .5s ease both;
+	-moz-animation: scaleUpDown .5s ease both;
+	animation: scaleUpDown .5s ease both;
+}
+
+@-webkit-keyframes scaleUpDown {
+	from { opacity: 0; -webkit-transform: scale(1.2); }
+}
+@-moz-keyframes scaleUpDown {
+	from { opacity: 0; -moz-transform: scale(1.2); }
+}
+@keyframes scaleUpDown {
+	from { opacity: 0; transform: scale(1.2); }
+}
 
 

@@ -8,7 +8,7 @@ var autoScaleInfo = {
   // 设计高度PC
   devisePCH: 1080,
   // 缩放中心 目前只支持 middle 和 top
-  center: 'top',
+  center: 'middle',
   // 是否是Y轴滚动模式
   scroll: false
 }

@@ -21,7 +21,7 @@ html {
   background-position: center top;
   background-size: cover;
 }
-body {
+.scale-box {
   background-image: url('@|5.png|');
   background-size: 100% 100%;
 }

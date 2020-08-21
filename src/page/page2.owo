@@ -1,8 +1,9 @@
 <template lang="pug">
 .page-2
   .so.so-0
-    img.so.so-1(src="@|29.png|" go="page1//scaleCenter/scaleUpDownCenter&&delay400/true")
-    img.so.so-2(src="@|27.png|")
+    img.so.so-1(src="@|29.png|" go="page1//scaleDownCenter/scaleUpCenter/true")
+    img.so.so-2(src="@|27.png|" o-animation="flicker")
+    img.so.so-add(src="@|25.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/8.mp4')")
     img.so.so-3(src="@|25.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/7.mp4')")
     img.so.so-4(src="@|23.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/6.mp4')")
     img.so.so-5(src="@|21.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/5.mp4')")
@@ -10,6 +11,7 @@
     img.so.so-7(src="@|17.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/3.mp4')")
     img.so.so-8(src="@|15.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/2.mp4')")
     img.so.so-9(src="@|13.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/1.mp4')")
+
 </template>
 
 <script>
@@ -43,7 +45,7 @@
   z-index: -2;
 }
 .so-3 {
-  left: 265px;
+  left: 155px;
   top: 642px;
   z-index: -3;
 }
@@ -76,5 +78,9 @@
   left: 51px;
   top: 210px;
   z-index: -9;
+}
+.so-add {
+  left: 375px;
+  top: 642px;
 }
 </style>
