@@ -1,4 +1,4 @@
-// Fri Aug 21 2020 15:24:07 GMT+0800 (GMT+08:00)
+// Fri Aug 21 2020 16:23:30 GMT+0800 (GMT+08:00)
 var owo = {tool: {},state: {},};
 /* 方法合集 */
 var _owo = {
@@ -95,19 +95,13 @@ _owo.bindEvent = function (eventName, eventFor, tempDom, moudleScript) {
       // 变量
       var startTime = 0
       var isMove = false
-      tempDom.ontouchstart = function (event) {
-        // if (event.stopPropagation) {event.stopPropagation()}
-        // else if (event.cancelBubble != undefined) event.cancelBubble = true
+      tempDom.ontouchstart = function () {
         startTime = Date.now();
       }
-      tempDom.ontouchmove = function (event) {
-        // if (event.stopPropagation) {event.stopPropagation()}
-        // else if (event.cancelBubble != undefined) event.cancelBubble = true
+      tempDom.ontouchmove = function () {
         isMove = true
       }
       tempDom.ontouchend = function (event) {
-        // if (event.stopPropagation) {event.stopPropagation()}
-        // else if (event.cancelBubble != undefined) event.cancelBubble = true
         if (Date.now() - startTime < 300 && !isMove) {_owo._run(eventFor, event || this, moudleScript)}
         // 清零
         startTime = 0;

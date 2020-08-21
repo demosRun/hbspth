@@ -3,7 +3,7 @@
   .so.so-0
     img.so.so-1(src="@|29.png|" go="page1//scaleDownCenter/scaleUpCenter/true")
     img.so.so-2(src="@|27.png|" o-animation="flicker")
-    img.so.so-add(src="@|25.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/8.mp4')")
+    img.so.so-add(src="@|add.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/8.mp4')")
     img.so.so-3(src="@|25.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/7.mp4')")
     img.so.so-4(src="@|23.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/6.mp4')")
     img.so.so-5(src="@|21.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/5.mp4')")
