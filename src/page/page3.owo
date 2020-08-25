@@ -1,0 +1,35 @@
+<template lang="pug">
+.page-3
+  img.so.replay(src="@|replay.png|" go="page2//scaleDownCenter/scaleUpCenter/true")
+  img.so.share-button(src="@|share-button.png|" o-tap="owo.script.share.switchShare()" o-animation="shrink")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      bgMusic.pause()
+    }
+  }
+</script>
+
+
+<style lang="less">
+.so {
+  position: absolute;
+}
+.page-3 {
+  background-image: url('@|share.jpg|')
+}
+.share-button {
+  top: 1100px;
+  left: 280px;
+  right: 0;
+  margin: auto;
+}
+.replay {
+  top: 1100px;
+  left: 0;
+  right: 280px;
+  margin: auto;
+}
+</style>

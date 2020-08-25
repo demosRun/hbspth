@@ -30,19 +30,20 @@
 </head>
 
 <body>
+  <video id="preload" style="display: none;" muted></video>
   <div class="scale-box">
     <!-- 页面[page1]-->
     <div class="page-1 page" template="page1" style="display: none;">
       <div class="so so-0">
         <img class="so so-1" src="./static/resource/11.png" o-animation="shrink" o-tap="autoPlay">
-        <img class="so so-2" src="./static/resource/9.png">
+        <img class="so so-2" src="./static/resource/9.png" go="page3//scaleDownCenter/scaleUpCenter/true">
         <img class="so so-3" src="./static/resource/7.png">
       </div>
     </div>
     <!-- 页面[page2]-->
     <div class="page-2 page" template="page2" style="display: none;">
       <div class="so so-0">
-        <img class="so so-1" src="./static/resource/29.png" go="page1//scaleDownCenter/scaleUpCenter/true">
+        <img class="so so-1" src="./static/resource/29.png" go="page3//scaleDownCenter/scaleUpCenter/true">
         <img class="so so-2" src="./static/resource/27.png" o-animation="flicker">
         <img class="so so-add" src="./static/resource/add.png" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/8.mp4')">
         <img class="so so-3" src="./static/resource/25.png" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/7.mp4')">
@@ -54,11 +55,20 @@
         <img class="so so-9" src="./static/resource/13.png" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/1.mp4')">
       </div>
     </div>
+    <!-- 页面[page3]-->
+    <div class="page-3 page" template="page3" style="display: none;">
+      <img class="so replay" src="./static/resource/replay.png" go="page2//scaleDownCenter/scaleUpCenter/true">
+      <img class="so share-button" src="./static/resource/share-button.png" o-tap="owo.script.share.switchShare()" o-animation="shrink">
+    </div>
     <!-- 页面[videoPlay]-->
     <div class="video-player page" template="videoPlay" style="display: none;">
       <video id="videoPlay" src="" x5-playsinline="true" x5-video-player-fullscreen="true" preload="auto" x5-video-orientation="portraint" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" x5-video-player-type="h5"></video>
       <img class="close-button" src="./static/resource/29.png" o-tap="close">
     </div>
+  </div>
+  <!-- 插件[share]-->
+  <div class="share-page owo-block" o-tap="hideShare" template="share" style="display: none;">
+    <img class="share-img" src="https://cunchu.site/ozzx/resource/share.png">
   </div>
 
 
@@ -71,13 +81,25 @@
     owo.script = {
       "page1": {
         "autoPlay": function autoPlay() {
-          var videoList = ['http://demos.run/hubeiVideo/video/1.mp4', 'http://demos.run/hubeiVideo/video/2.mp4', 'http://demos.run/hubeiVideo/video/3.mp4', 'http://demos.run/hubeiVideo/video/4.mp4', 'http://demos.run/hubeiVideo/video/5.mp4', 'http://demos.run/hubeiVideo/video/6.mp4', 'http://demos.run/hubeiVideo/video/7.mp4', 'http://demos.run/hubeiVideo/video/8.mp4'];
-          owo.script.videoPlay.playUrl(videoList[randomNum(0, 7)]);
+          owo.script.videoPlay.playUrl(videoSrc);
+        },
+        created:function () {
+          bgMusic.pause()
         }
       },
-      "page2": {},
+      "page2": {
+        created:function () {
+          bgMusic.pause()
+        }
+      },
+      "page3": {
+        created:function () {
+          bgMusic.pause()
+        }
+      },
       "videoPlay": {
         "created": function created() {
+          bgMusic.pause()
           var _this = this;
 
           this.query('#videoPlay').addEventListener('ended', function() {
@@ -116,6 +138,26 @@
             document.querySelector('.page-2 .so-1').style.display = 'block';
           }, 500);
           owo.go("page2//scaleDown/scaleUpDown/true/scaleDown/scaleUp");
+        }
+      },
+      "share": {
+        "created": function created() {
+          if (autoScaleInfo && autoScaleInfo.hideHeight) {
+            this.$el.getElementsByClassName('share-img')[0].style.top = -autoScaleInfo.hideHeight + 'px';
+          }
+        },
+        "showShare": function showShare() {
+          this.$el.style.display = 'block';
+        },
+        "hideShare": function hideShare() {
+          this.$el.style.display = 'none';
+        },
+        "switchShare": function switchShare() {
+          if (this.$el.style.display == 'block') {
+            this.$el.style.display = 'none';
+          } else {
+            this.$el.style.display = 'block';
+          }
         }
       }
     };

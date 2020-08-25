@@ -106,9 +106,19 @@
 			"type": "page"
 		},
 		{
+			"name": "page3",
+			"src": "./src/page/page3.owo",
+			"type": "page"
+		},
+		{
 			"name": "videoPlay",
 			"src": "./src/page/videoPlay.owo",
 			"type": "page"
+		},
+		{
+			"name": "share",
+			"src": "https://template.owo.ink/51ca7ab4c38de699.owo",
+			"type": "block"
 		}
 	],
 	"mode": {

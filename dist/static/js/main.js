@@ -21,3 +21,38 @@ function randomNum(minNum,maxNum){
           break; 
   } 
 } 
+
+const videoList = [
+  'http://demos.run/hubeiVideo/video/1.mp4',
+  'http://demos.run/hubeiVideo/video/2.mp4',
+  'http://demos.run/hubeiVideo/video/3.mp4',
+  'http://demos.run/hubeiVideo/video/4.mp4',
+  'http://demos.run/hubeiVideo/video/5.mp4',
+  'http://demos.run/hubeiVideo/video/6.mp4',
+  'http://demos.run/hubeiVideo/video/7.mp4',
+  'http://demos.run/hubeiVideo/video/8.mp4'
+]
+
+var vidElement = document.getElementById('preload');
+
+function loadVideo (element, index) {
+  setTimeout(function () {
+    vidElement.src = element;
+    console.log(vidElement)
+    vidElement.play()
+    setTimeout(function () {
+      vidElement.pause()
+    }, 800);
+  }, 1000 * index);
+}
+var videoSrc = videoList[randomNum(0, 7)]
+setTimeout(() => {
+  loadVideo(videoSrc, 0)
+}, 0);
+var bgMusic = null
+document.addEventListener("WeixinJSBridgeReady", function () {
+  bgMusic = new Audio("./static/resource/18.mp3")
+  bgMusic.loop = true
+  // bgMusic.volume = 0.1
+  bgMusic.play()
+}, false)

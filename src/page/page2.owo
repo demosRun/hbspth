@@ -1,7 +1,7 @@
 <template lang="pug">
 .page-2
   .so.so-0
-    img.so.so-1(src="@|29.png|" go="page1//scaleDownCenter/scaleUpCenter/true")
+    img.so.so-1(src="@|29.png|" go="page3//scaleDownCenter/scaleUpCenter/true")
     img.so.so-2(src="@|27.png|" o-animation="flicker")
     img.so.so-add(src="@|add.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/8.mp4')")
     img.so.so-3(src="@|25.png|" o-tap="owo.script.videoPlay.playUrl('http://demos.run/hubeiVideo/video/7.mp4')")
@@ -17,7 +17,7 @@
 <script>
   module.exports = {
     created: function () {
-
+      bgMusic.pause()
     }
   }
 </script>
@@ -45,7 +45,7 @@
   z-index: -2;
 }
 .so-3 {
-  left: 155px;
+  left: 51px;
   top: 642px;
   z-index: -3;
 }
@@ -80,7 +80,7 @@
   z-index: -9;
 }
 .so-add {
-  left: 375px;
-  top: 642px;
+  left: 278px;
+  top: 655px;
 }
 </style>
